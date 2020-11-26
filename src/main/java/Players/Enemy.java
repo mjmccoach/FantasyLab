@@ -29,6 +29,14 @@ public abstract class Enemy {
         this.health = newHealth;
     }
 
+    public int getDamage() {
+        return this.damage;
+    }
+
+    public void setDamage(int newDamage) {
+        this.damage = newDamage;
+    }
+
     public void attack(Character characterToAttack){
         int characterHealth = characterToAttack.getHealth();
         characterToAttack.setHealth(characterHealth - this.damage);

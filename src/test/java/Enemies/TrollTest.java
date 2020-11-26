@@ -36,4 +36,10 @@ public class TrollTest {
         troll.attack(wizard);
         assertEquals(80, wizard.getHealth());
     }
+
+    @Test
+    public void canMakeWeapon(){
+        troll.makeWeapon();
+        assertEquals(40, troll.getDamage());
+    }
 }

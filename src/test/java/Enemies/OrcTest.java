@@ -37,4 +37,10 @@ public class OrcTest {
         orc.attack(wizard);
         assertEquals(95, wizard.getHealth());
     }
+
+    @Test
+    public void canIncreaseHealth(){
+        orc.addHealth();
+        assertEquals(135, orc.getHealth());
+    }
 }
