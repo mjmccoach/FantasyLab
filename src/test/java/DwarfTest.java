@@ -7,20 +7,25 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class DwarfTest {
-    Fighter fighter;
+    Dwarf dwarf;
 
     @Before
     public void before() {
-        fighter = new Dwarf("Gimli", 100, WeaponType.AXE);
+        dwarf = new Dwarf("Gimli", 100, WeaponType.AXE);
     }
 
     @Test
     public void hasWeapon() {
-        assertEquals(WeaponType.AXE, fighter.getWeapons());
+        assertEquals(WeaponType.AXE, dwarf.getWeapons());
     }
 
     @Test
     public void weaponHasDamage() {
-        assertEquals(20, fighter.getWeapons().getDamage());
+        assertEquals(20, dwarf.getWeapons().getDamage());
+    }
+
+    @Test
+    public void canExtraAttack() {
+        assertEquals(10, dwarf.extraAttack());
     }
 }
