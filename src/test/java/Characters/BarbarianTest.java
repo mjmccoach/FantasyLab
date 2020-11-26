@@ -1,3 +1,5 @@
+package Characters;
+
 import Abilities.WeaponType;
 import Players.Fighters.Barbarian;
 import org.junit.Before;

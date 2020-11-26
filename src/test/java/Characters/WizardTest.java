@@ -1,3 +1,5 @@
+package Characters;
+
 import Abilities.PetType;
 import Abilities.SpellType;
 import Players.Casters.Wizard;

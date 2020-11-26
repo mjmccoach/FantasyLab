@@ -1,3 +1,5 @@
+package Characters;
+
 import Players.Character;
 import org.junit.Before;
 import org.junit.Test;

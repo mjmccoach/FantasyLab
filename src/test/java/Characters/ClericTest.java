@@ -1,3 +1,5 @@
+package Characters;
+
 import Abilities.HealType;
 import Abilities.WeaponType;
 import Players.Fighters.Dwarf;

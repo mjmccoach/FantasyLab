@@ -1,3 +1,5 @@
+package Characters;
+
 import Abilities.WeaponType;
 import Players.Fighters.Dwarf;
 import Players.Fighters.Knight;
