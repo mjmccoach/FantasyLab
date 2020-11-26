@@ -9,13 +9,13 @@ public abstract class Room {
     private String name;
     private ArrayList<Character> players;
     private ArrayList<Enemy> enemies;
-    private TreasureType treasure;
+    private ArrayList<TreasureType> treasure;
 
-    public Room(String name, TreasureType treasure) {
+    public Room(String name) {
         this.name = name;
         this.players = new ArrayList<>();
         this.enemies = new ArrayList<>();
-        this.treasure = treasure;
+        this.treasure = new ArrayList<>();
     }
 
     public String getName() {
@@ -36,12 +36,12 @@ public abstract class Room {
     }
 
 
-    public TreasureType getTreasure() {
-        return treasure;
+    public int getTreasure() {
+        return this.treasure.size();
     }
 
-    public void setTreasure(TreasureType treasure) {
-        this.treasure = treasure;
+    public void addTreasure(TreasureType treasure) {
+        this.treasure.add(treasure);
     }
 
     public void addPlayer(Character playerToAdd) {
@@ -59,8 +59,11 @@ public abstract class Room {
     }
 
     public void removePlayers() {
-        if(enemies.size() == 0) {
+        if(enemies.size() == 0 && this.treasure.size() == 0) {
             this.players.clear();
         }
+    }
+    public TreasureType retrieveLoot() {
+        return this.treasure.get(0);
     }
 }

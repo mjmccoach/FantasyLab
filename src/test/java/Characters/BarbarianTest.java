@@ -4,6 +4,9 @@ import Abilities.WeaponType;
 import Players.Enemies.Dragon;
 import Players.Enemy;
 import Players.Fighters.Barbarian;
+import Rooms.Forest;
+import Rooms.Room;
+import Rooms.TreasureType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,11 +16,13 @@ public class BarbarianTest {
 
     private Barbarian barbarian;
     private Enemy dragon;
+    private Room forestRoom;
 
     @Before
     public void before() {
         barbarian = new Barbarian("Dave", 150, WeaponType.CLUB);
         dragon = new Dragon("Smaug", 200, 20);
+        forestRoom = new Forest("Enchanted Forest");
     }
 
     @Test
@@ -40,5 +45,17 @@ public class BarbarianTest {
     public void canAttack(){
         barbarian.attack(dragon);
         assertEquals(185, dragon.getHealth());
+    }
+
+    @Test
+    public void lootStartsEmpty() {
+        assertEquals(0, barbarian.getLoot());
+    }
+
+    @Test
+    public void canAddLoot() {
+        forestRoom.addTreasure(TreasureType.GEMS);
+        barbarian.lootRoom(forestRoom);
+        assertEquals(1, barbarian.getLoot());
     }
 }

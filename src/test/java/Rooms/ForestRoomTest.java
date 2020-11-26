@@ -19,7 +19,7 @@ public class ForestRoomTest {
 
     @Before
     public void before() {
-        forestRoom = new Forest("Enchanted Forest", TreasureType.GEMS);
+        forestRoom = new Forest("Enchanted Forest");
         dwarf = new Dwarf("Gimli", 100, WeaponType.AXE);
         troll = new Troll("Jule", 400, 20);
     }
@@ -31,7 +31,8 @@ public class ForestRoomTest {
 
     @Test
     public void hasTreasureType() {
-        assertEquals(TreasureType.GEMS, forestRoom.getTreasure());
+        forestRoom.addTreasure(TreasureType.GEMS);
+        assertEquals(TreasureType.GEMS, forestRoom.retrieveLoot());
     }
 
     @Test
