@@ -20,4 +20,10 @@ public class Cleric extends Character {
     public void setHealType(HealType newHealType) {
         this.healType = newHealType;
     }
+
+    public void revive(Character characterToHeal) {
+        if(characterToHeal.getHealth() == 0) {
+            characterToHeal.setHealth(100);
+        }
+    }
 }
