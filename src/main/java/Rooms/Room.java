@@ -10,12 +10,14 @@ public abstract class Room {
     private ArrayList<Character> players;
     private ArrayList<Enemy> enemies;
     private ArrayList<TreasureType> treasure;
+    private boolean completed;
 
     public Room(String name) {
         this.name = name;
         this.players = new ArrayList<>();
         this.enemies = new ArrayList<>();
         this.treasure = new ArrayList<>();
+        this.completed = false;
     }
 
     public String getName() {
@@ -62,6 +64,7 @@ public abstract class Room {
         if(enemies.size() == 0 && this.treasure.size() == 0) {
             this.players.clear();
         }
+        this.completed = true;
     }
     public TreasureType retrieveLoot() {
         return this.treasure.get(0);
