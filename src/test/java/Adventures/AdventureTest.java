@@ -7,6 +7,7 @@ import Abilities.WeaponType;
 import Players.Casters.Wizard;
 import Players.Character;
 import Players.Enemies.Dragon;
+import Players.Enemies.GiantPenguin;
 import Players.Enemies.Orc;
 import Players.Enemies.Troll;
 import Players.Enemy;
@@ -43,7 +44,7 @@ public class AdventureTest {
         enemy1 = new Troll("Ug", 200, 20);
         enemy2 = new Dragon("Bert", 150, 15);
         enemy3 = new Orc("Frank", 80, 5);
-        enemy4 = new Troll("Steph", 175, 25);
+        enemy4 = new GiantPenguin("Steph", 175, 25);
         player1 = new Dwarf("Rory", 100, WeaponType.AXE);
         player2 = new Wizard("Gandalf the Grey", 150, PetType.UNICORN, SpellType.THUNDERSTORM);
         player3 = new Cleric("Jane", 90, HealType.POTION);
