@@ -3,6 +3,8 @@ package Characters;
 import Abilities.PetType;
 import Abilities.SpellType;
 import Players.Casters.Wizard;
+import Players.Enemies.Dragon;
+import Players.Enemy;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,10 +12,12 @@ import static org.junit.Assert.assertEquals;
 
 public class WizardTest {
     private Wizard wizard;
+    private Enemy dragon;
 
     @Before
     public void before() {
         wizard = new Wizard("Gandalf the White", 100, PetType.UNICORN, SpellType.BLIZZARD);
+        dragon = new Dragon("Smaug", 200, 20);
     }
 
     @Test
@@ -58,5 +62,11 @@ public class WizardTest {
     public void canChangePet() {
         wizard.setPet(PetType.PHOENIX);
         assertEquals(PetType.PHOENIX, wizard.getPet());
+    }
+
+    @Test
+    public void canCastSpell(){
+        wizard.castSpell(dragon);
+        assertEquals(180, dragon.getHealth());
     }
 }

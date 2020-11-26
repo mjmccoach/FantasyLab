@@ -51,4 +51,16 @@ public abstract class Room {
     public void addEnemy(Enemy enemyToAdd) {
         this.enemies.add(enemyToAdd);
     }
+
+    public void removeEnemy(Enemy enemyToRemove) {
+        if(enemyToRemove.getHealth() == 0) {
+            this.enemies.remove(enemyToRemove);
+        }
+    }
+
+    public void removePlayers() {
+        if(enemies.size() == 0) {
+            this.players.clear();
+        }
+    }
 }

@@ -48,4 +48,15 @@ public class ForestRoomTest {
         assertEquals(1, forestRoom.countCharacters());
         assertEquals(1, forestRoom.countEnemies());
     }
+
+    @Test
+    public void playersCanLeave() {
+        forestRoom.addPlayer(dwarf);
+        forestRoom.addEnemy(troll);
+        troll.setHealth(0);
+        forestRoom.removeEnemy(troll);
+        forestRoom.removePlayers();
+
+        assertEquals(0, forestRoom.countCharacters());
+    }
 }

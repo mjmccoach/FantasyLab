@@ -3,6 +3,7 @@ package Players.Casters;
 import Abilities.PetType;
 import Abilities.SpellType;
 import Players.Character;
+import Players.Enemy;
 
 public abstract class Caster extends Character {
     private PetType pet;
@@ -28,5 +29,10 @@ public abstract class Caster extends Character {
 
     public void setSpell(SpellType spell) {
         this.spell = spell;
+    }
+
+    public void castSpell(Enemy enemyToAttack){
+        int enemyHealth = enemyToAttack.getHealth();
+        enemyToAttack.setHealth(enemyHealth - this.spell.getDamage());
     }
 }
