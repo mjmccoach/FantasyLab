@@ -1,6 +1,7 @@
 package Players.Fighters;
 
 import Abilities.WeaponType;
+import Players.Character;
 
 public class Knight extends Fighter {
     Knight knight;
@@ -11,4 +12,8 @@ public class Knight extends Fighter {
     }
 
 
+    public void defend(Character characterToDefend) {
+        int existingHealth = characterToDefend.getHealth();
+        characterToDefend.setHealth(existingHealth+30);
+    }
 }
